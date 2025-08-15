@@ -1,4 +1,5 @@
 numpy
+joblib
 pandas
 matplotlib
 seaborn
@@ -7,5 +8,4 @@ nltk
 tensorflow
 transformers
 kagglehub
-joblib
 streamlit
