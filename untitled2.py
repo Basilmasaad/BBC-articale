@@ -7,7 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/17Q31XRdPnarTcF1fRZfTyIZnYqRdNw6b
 """
 
-pip install joblib
 import streamlit as st
 import pandas as pd
 import re
@@ -19,7 +18,10 @@ import sys
 try:
     import joblib
 except ImportError:
-    st.error("❌ joblib is not installed. Please install it using: pip install joblib")
+    st.error("❌ joblib is not installed.")
+    st.markdown("**To fix this:**")
+    st.code("pip install joblib", language="bash")
+    st.info("Run the above command in your terminal, then restart this app.")
     st.stop()
 
 try:
@@ -32,6 +34,7 @@ except ImportError:
     st.warning("⚠️ NLTK is not installed. Using basic text processing.")
     NLTK_AVAILABLE = False
 
+# Rest of your code continues here...
 # Set up NLTK only if available
 if NLTK_AVAILABLE:
     # Set NLTK data path to a writable directory
